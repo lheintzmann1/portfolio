@@ -1,12 +1,14 @@
 [application]
+name = "portfolio"
+default_platform = "web"
 
 [web.app]
-
 # HTML title tag content
 title = "portfolio"
 
-# include `assets` in web platform
 [web.resource]
+# Asset directory configuration
+dir = ["assets"]
 
 # Additional CSS style files
 style = []
