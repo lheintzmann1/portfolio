@@ -8,6 +8,7 @@ edition = "2021"
 
 [dependencies]
 dioxus = { version = "0.7.1", features = [] }
+dioxus-heroicons = "0.4.1"
 
 [features]
 default = ["web"]
