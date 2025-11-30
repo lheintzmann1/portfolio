@@ -1,4 +1,3 @@
-
 use dioxus::prelude::*;
 use crate::assets::*;
 use crate::components::hero_content::HeroContent;
@@ -7,23 +6,31 @@ use crate::components::hero_content::HeroContent;
 pub fn Hero() -> Element {
     rsx! {
         main {
-            class: "h-full w-full ",
-            div {
-                class: "flex flex-col gap-20",
-                div {
-                    class: "flex flex-col h-full w-full", // "relative" cause issues with video positioning
-                    video {
-                        class: "rotate-180 absolute top-[-400px] left-0 w-full h-full object-cover -z-20", // originally: "top-[-360px]"
-                        autoplay: true,
-                        muted: true,
-                        loop: true,
-                        source {
-                            src: BLACKHOLE_WEBM,
-                            r#type: "video/webm"
-                        }
-                    }
-                    HeroContent {}
+            class: "relative min-h-screen w-full overflow-hidden",
+            
+            // Video background - absolutely positioned
+            video {
+                class: "absolute inset-0 w-full h-full object-cover",
+                style: "transform: rotate(180deg) translateY(43%);",
+                autoplay: true,
+                muted: true,
+                loop: true,
+                playsinline: true,
+                source {
+                    src: BLACKHOLE_WEBM,
+                    r#type: "video/webm"
                 }
+            }
+            
+            // Dark overlay (optional but recommended for text readability)
+            // div {
+            //     class: "absolute inset-0 bg-black/50 z-10"
+            // }
+            
+            // Content container - relatively positioned above video
+            div {
+                class: "relative z-20 min-h-screen flex items-center justify-center",
+                HeroContent {}
             }
         }
     }
