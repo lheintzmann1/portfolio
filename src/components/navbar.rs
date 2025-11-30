@@ -16,7 +16,7 @@ pub fn Navbar() -> Element {
                         class: "flex-1 flex items-center space-x-3",
                         // Logo
                         div {
-                            class: "w-12 h-12",
+                            class: "w-10 h-10",
                             img {
                                 class: "w-full h-full hover:brightness-110 transition-all duration-300",
                                 src: "{LH_WHITE_SVG}",
@@ -26,10 +26,8 @@ pub fn Navbar() -> Element {
                         // Name
                         a {
                             href: "#",
-                            // class: "text-white text-xl font-bold hover:text-blue-400 transition-colors duration-300",
-                            // class: "hidden md:flex md:selffont-bold ml-[10px] text-gray-300 hover:text-blue-400 transition-colors duration-300",
-                            class: "hidden md:flex md:selffont-bold ml-[10px] text-white hover:text-blue-400 transition-colors duration-300",
-                            // TODO: Futura Medium font
+                            class: "hidden md:flex md:selffont-bold ml-2.5 text-white hover:text-blue-400 transition-colors duration-300", // TODO: text-white or text-gray-300
+                            style: "font-family: 'Outfit', sans-serif; font-weight: 400;", // TODO: local font
                             "Lucas HEINTZMANN"
                         }
                     }
@@ -45,7 +43,7 @@ pub fn Navbar() -> Element {
                     }
                     
                     // Right side spacer to maintain balance
-                    // TODO: Replace with social icons or EN/FR toggle
+                    // TODO: Replace with social icons (Github, LinkedIn, Email) or EN/FR toggle
                     div {
                         class: "flex-1"
                     }

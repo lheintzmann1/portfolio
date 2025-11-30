@@ -1,12 +1,13 @@
 
 use dioxus::prelude::*;
 use crate::assets::*;
+use crate::components::hero_content::HeroContent;
 
 #[component]
 pub fn Hero() -> Element {
     rsx! {
         main {
-            class: "h-full w-full",
+            class: "h-full w-full ",
             div {
                 class: "flex flex-col gap-20",
                 div {
@@ -21,6 +22,7 @@ pub fn Hero() -> Element {
                             r#type: "video/webm"
                         }
                     }
+                    HeroContent {}
                 }
             }
         }
