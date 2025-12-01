@@ -1,5 +1,5 @@
-use dioxus::prelude::*;
 use crate::assets::LH_WHITE_SVG;
+use dioxus::prelude::*;
 
 #[component]
 pub fn Navbar() -> Element {
@@ -10,7 +10,7 @@ pub fn Navbar() -> Element {
                 class: "max-w-8xl mx-auto px-4 sm:px-6 lg:px-8",
                 div {
                     class: "flex items-center h-16",
-                    
+
                     // Logo/Brand - Left side
                     div {
                         class: "flex-1 flex items-center space-x-3",
@@ -31,7 +31,7 @@ pub fn Navbar() -> Element {
                             "Lucas HEINTZMANN"
                         }
                     }
-                    
+
                     // Navigation Links - Center
                     div {
                         class: "flex-1 flex justify-center items-baseline space-x-8",
@@ -41,7 +41,7 @@ pub fn Navbar() -> Element {
                         NavLink { href: "#experience", text: "Experience" }
                         NavLink { href: "#contact", text: "Contact" }
                     }
-                    
+
                     // Right side spacer to maintain balance
                     // TODO: Replace with social icons (Github, LinkedIn, Email) or EN/FR toggle
                     div {
@@ -62,7 +62,7 @@ fn NavLink(href: String, text: String) -> Element {
             "{text}"
             // Animated underline effect
             span {
-                class: "absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300" // TODO: purple-500 or blue-400
+                class: "absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"
             }
         }
     }
