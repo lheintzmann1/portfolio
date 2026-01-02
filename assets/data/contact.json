@@ -3,7 +3,6 @@
   "form_action": "https://formsubmit.co/a286b74db36142bc431da2076ccef4a5",
   "info": [
     { "label": "Email", "value": "hello@luhe.dev", "href": "mailto:hello@luhe.dev" },
-    { "label": "Phone", "value": "+1 (555) 123-4567", "href": "tel:+15551234567" },
     { "label": "Location", "value": "Occitanie, France", "href": "#" }
   ],
   "social_links": [
