@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+* {
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Anti-banding for gradients */
+body {
+	background-image: 
+		url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="3" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E');
+}
+
 .Welcome-text {
 	background: linear-gradient(0deg,hsla(0,0%,100%,.4),hsla(0,0%,100%,.4)),linear-gradient(90.01deg,#e59cff .01%,#ba9cff 50.01%,#9cb2ff);
 	background-blend-mode: normal,screen;
