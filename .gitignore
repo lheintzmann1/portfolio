@@ -12,3 +12,6 @@ Cargo.lock
 # JS
 /node_modules
 package-lock.json
+
+# Generated tailwind CSS file
+/assets/tailwind.css
