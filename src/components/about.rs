@@ -5,8 +5,9 @@
 
 use dioxus::prelude::*;
 
+use crate::assets::ME_PNG;
 use crate::data::{load_profile, ProfileData};
-use crate::styles::{AVATAR_GRADIENT, FONT_INTER, GLASS_CONTAINER_BG};
+use crate::styles::{FONT_INTER, GLASS_CONTAINER_BG};
 
 // ============================================================================
 // COMPONENTS
@@ -15,7 +16,7 @@ use crate::styles::{AVATAR_GRADIENT, FONT_INTER, GLASS_CONTAINER_BG};
 /// About section with personal introduction and statistics.
 ///
 /// Displays a two-column layout:
-/// - Left: Visual avatar card with initials
+/// - Left: Visual avatar card with profile photo
 /// - Right: Biography and key statistics
 #[component]
 pub fn About() -> Element {
@@ -33,10 +34,7 @@ pub fn About() -> Element {
                 // Two-column content layout
                 div { class: "grid md:grid-cols-2 gap-12 items-center",
                     // Left: Avatar card
-                    AvatarCard {
-                        initials: profile.initials.clone(),
-                        role: profile.role.clone(),
-                    }
+                    AvatarCard {}
 
                     // Right: Bio and stats
                     div { class: "space-y-6",
@@ -69,19 +67,17 @@ fn SectionTitle(title: &'static str) -> Element {
     }
 }
 
-/// Glassmorphism avatar card with initials and role.
+/// Glassmorphism avatar card with profile photo.
 #[component]
-fn AvatarCard(initials: String, role: String) -> Element {
+fn AvatarCard() -> Element {
     rsx! {
         div { class: "relative",
-            div { class: "aspect-square max-w-md mx-auto rounded-[32px] {GLASS_CONTAINER_BG} backdrop-blur-xl border border-white/[0.08] p-12 flex items-center justify-center shadow-2xl shadow-black/40 hover:shadow-blue-500/10 transition-all duration-700 ease-in-out hover:border-white/[0.12]",
-                div { class: "text-center",
-                    // Initials circle
-                    div { class: "w-40 h-40 mx-auto mb-6 rounded-full {AVATAR_GRADIENT} flex items-center justify-center text-white text-6xl font-light shadow-2xl shadow-black/50 backdrop-blur-sm",
-                        "{initials}"
-                    }
-                    // Role subtitle
-                    p { class: "text-white/50 text-xl font-light tracking-wide", "{role}" }
+            div { class: "aspect-square max-w-md mx-auto rounded-[32px] {GLASS_CONTAINER_BG} backdrop-blur-xl border border-white/[0.08] overflow-hidden shadow-2xl shadow-black/40 hover:shadow-blue-500/10 transition-all duration-700 ease-in-out hover:border-white/[0.12]",
+                // Profile photo
+                img {
+                    src: ME_PNG,
+                    alt: "Profile photo",
+                    class: "w-full h-full object-cover",
                 }
             }
         }

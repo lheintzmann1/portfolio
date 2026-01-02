@@ -51,3 +51,6 @@ pub const CURSOR_PNG: Asset = asset!("/assets/cursor.png");
 
 /// Background video for the hero section (black hole animation).
 pub const BLACKHOLE_WEBM: Asset = asset!("/assets/blackhole.webm");
+
+/// Profile photo displayed in the about section.
+pub const ME_PNG: Asset = asset!("/assets/me.png");
