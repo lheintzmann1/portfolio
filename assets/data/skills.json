@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Languages",
+    "skills": ["Rust", "C", "C#", "Python", "Java", "Kotlin", "OCaml", "Bash"]
+  },
+  {
+    "title": "Game Development",
+    "skills": ["Unity", "Unreal Engine", "C# Scripting", "Blueprints"]
+  },
+  {
+    "title": "Web Development",
+    "skills": ["Dioxus", "HTML/CSS", "JavaScript", "Node.js", ".NET"]
+  },
+  {
+    "title": "Tools & DevOps",
+    "skills": ["Git/GitHub", "VS Code", "Visual Studio", "IntelliJ IDEA", "Nix"]
+  },
+  {
+    "title": "Operating Systems",
+    "skills": ["Linux", "Windows", "Unix Shell", "PowerShell"]
+  },
+  {
+    "title": "3D & Creative",
+    "skills": ["Blender", "AutoCAD", "DaVinci Resolve", "Affinity Suite"]
+  }
+]

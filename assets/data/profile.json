@@ -1,0 +1,18 @@
+{
+  "name": "Lucas HEINTZMANN",
+  "initials": "LH",
+  "role": "Full-Stack Developer",
+  "headline": "Providing the best project experience.",
+  "intro": "I'm a Full Stack Software Engineer with experience in Website, Mobile, and Software development. Check out my projects and skills.",
+  "bio": [
+    "I'm a passionate Full-Stack Developer with expertise in building modern web applications. I love creating elegant solutions to complex problems and continuously learning new technologies.",
+    "With a strong foundation in both front-end and back-end development, I specialize in creating responsive, user-friendly interfaces and robust server-side applications.",
+    "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community."
+  ],
+  "stats": [
+    { "value": "3+", "label": "Years Exp." },
+    { "value": "20+", "label": "Projects" },
+    { "value": "10+", "label": "Technologies" }
+  ],
+  "copyright_year": 2026
+}

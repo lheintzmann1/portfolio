@@ -1,0 +1,38 @@
+[
+  {
+    "position": "BTS SIO Option SLAM",
+    "company": "Lycée Jean Lurçat, Perpignan",
+    "period": "2025 - 2027",
+    "description": "Services Informatiques aux Organisations, specializing in software development and business applications.",
+    "achievements": [
+      "Application development (Software Solutions & Business Applications)",
+      "Software development methodologies and IT project management",
+      "Design and maintenance of application solutions"
+    ],
+    "align": "right"
+  },
+  {
+    "position": "L1 Computer Science",
+    "company": "Université de Toulouse",
+    "period": "2024 - 2025",
+    "description": "First year of Computer Science degree focusing on programming fundamentals and system architecture.",
+    "achievements": [
+      "Programming in Java and C, algorithms and hardware architecture",
+      "Unix systems exploration and task automation with Bash scripts",
+      "Personal projects focused on optimization"
+    ],
+    "align": "left"
+  },
+  {
+    "position": "Observation Internship",
+    "company": "Médiathèque de Port-la-Nouvelle",
+    "period": "2020 - 2021",
+    "description": "Discovery internship in a public library environment, focusing on digital document management.",
+    "achievements": [
+      "Digital document management with database organization",
+      "Public reception assistance handling IT requests",
+      "Discovery of IT infrastructure organization"
+    ],
+    "align": "right"
+  }
+]
