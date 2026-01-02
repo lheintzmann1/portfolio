@@ -2,7 +2,7 @@
   "intro": "Have a project in mind or want to collaborate? Feel free to reach out. I'm always open to discussing new opportunities.",
   "form_action": "https://formsubmit.co/a286b74db36142bc431da2076ccef4a5",
   "info": [
-    { "label": "Email", "value": "hello@example.com", "href": "mailto:hello@example.com" },
+    { "label": "Email", "value": "hello@luhe.dev", "href": "mailto:hello@luhe.dev" },
     { "label": "Phone", "value": "+1 (555) 123-4567", "href": "tel:+15551234567" },
     { "label": "Location", "value": "Occitanie, France", "href": "#" }
   ],
