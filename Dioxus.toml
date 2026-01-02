@@ -6,6 +6,9 @@ default_platform = "web"
 # HTML title tag content
 title = "portfolio"
 
+# Custom HTML template path
+index_path = "index.html"
+
 [web.resource]
 # Asset directory configuration
 dir = ["assets"]

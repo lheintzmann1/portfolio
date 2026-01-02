@@ -4,11 +4,11 @@ version = "0.1.0"
 authors = ["lheintzmann1 <lheintzmann1@disroot.org>"]
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 dioxus = { version = "0.7.1", features = [] }
 dioxus-free-icons = { version = "0.10.0", features = ["hero-icons-solid"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 
 [features]
 default = ["web"]
