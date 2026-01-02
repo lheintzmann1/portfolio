@@ -47,7 +47,7 @@ jobs:
       - name: Prepare dist folder
         run: |
           mkdir -p dist
-          cp -r target/dx/portfolio/bundle/web/public/* dist/
+          cp -r target/dx/portfolio/release/web/public/* dist/
           cp CNAME dist/ || true
           touch dist/.nojekyll
           cp dist/index.html dist/404.html
