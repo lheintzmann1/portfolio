@@ -4,7 +4,7 @@
   "info": [
     { "label": "Email", "value": "hello@example.com", "href": "mailto:hello@example.com" },
     { "label": "Phone", "value": "+1 (555) 123-4567", "href": "tel:+15551234567" },
-    { "label": "Location", "value": "San Francisco, CA", "href": "#" }
+    { "label": "Location", "value": "Occitanie, France", "href": "#" }
   ],
   "social_links": [
     { "name": "GitHub", "url": "https://github.com/lheintzmann1" },
