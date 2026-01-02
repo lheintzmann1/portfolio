@@ -10,7 +10,8 @@ title = "portfolio"
 index_path = "index.html"
 
 # Base path for GitHub Pages (repo name)
-base_path = "portfolio"
+# Set to empty for custom domain deployment
+base_path = ""
 
 [web.resource]
 # Asset directory configuration
