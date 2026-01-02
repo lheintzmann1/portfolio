@@ -44,6 +44,13 @@ jobs:
       - name: Build Dioxus project
         run: dx build --release
 
+      - name: Copy CNAME to dist
+        run: |
+          mkdir -p dist
+          cp CNAME dist/ || true
+          cp .nojekyll dist/ || true
+          cp -r target/dx/portfolio/release/web/public/* dist/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
