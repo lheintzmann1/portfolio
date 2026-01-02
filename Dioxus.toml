@@ -9,6 +9,9 @@ title = "portfolio"
 # Custom HTML template path
 index_path = "index.html"
 
+# Base path for GitHub Pages (repo name)
+base_path = "portfolio"
+
 [web.resource]
 # Asset directory configuration
 dir = ["assets"]

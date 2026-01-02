@@ -42,14 +42,15 @@ jobs:
         run: npx @tailwindcss/cli -i ./tailwind.css -o ./assets/tailwind.css --minify
 
       - name: Build Dioxus project
-        run: dx build --release
+        run: dx bundle --release
 
-      - name: Copy CNAME to dist
+      - name: Prepare dist folder
         run: |
           mkdir -p dist
+          cp -r target/dx/portfolio/bundle/web/public/* dist/
           cp CNAME dist/ || true
-          cp .nojekyll dist/ || true
-          cp -r target/dx/portfolio/release/web/public/* dist/
+          touch dist/.nojekyll
+          cp dist/index.html dist/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
