@@ -2,7 +2,7 @@
   {
     "title": "Dioxus Leaflet",
     "description": "A general-purpose Leaflet map component for Dioxus applications. Provides interactive maps with markers, popups, and custom styling.",
-    "tags": ["Rust", "Dioxus", "TypeScript"],
+    "tags": ["Rust", "TypeScript", "Dioxus"],
     "buttons": [
       {
         "label": "Source Code",
