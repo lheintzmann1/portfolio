@@ -71,15 +71,20 @@ fn App() -> Element {
             "#
         }
 
-        // Main content container with dark background
-        div { class: "bg-[#030014]",
-            Navbar {}
-            Hero {}
-            About {}
-            Skills {}
-            Projects {}
-            Experience {}
-            Contact {}
+        div { class: "bg-[#030014] relative",
+            // Add starfield before all content
+            Starfield {}
+
+            // Wrap content in relative container
+            div { class: "relative z-10",
+                Navbar {}
+                Hero {}
+                About {}
+                Skills {}
+                Projects {}
+                Experience {}
+                Contact {}
+            }
         }
     }
 }

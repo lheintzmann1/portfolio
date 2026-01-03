@@ -22,6 +22,7 @@ mod hero_content;
 mod navbar;
 mod projects;
 mod skills;
+mod starfield;
 
 // Public exports
 pub use about::About;
@@ -32,3 +33,4 @@ pub use hero_content::HeroContent;
 pub use navbar::Navbar;
 pub use projects::Projects;
 pub use skills::Skills;
+pub use starfield::{StarfieldConfig, Starfield};
