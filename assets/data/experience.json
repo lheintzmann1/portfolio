@@ -1,9 +1,9 @@
 [
   {
-    "position": "BTS SIO Option SLAM",
-    "company": "Lycée Jean Lurçat, Perpignan",
+    "position": "HND IT Services - Software Solutions (SLAM)",
+    "company": "Jean Lurçat High School, Perpignan",
     "period": "2025 - 2027",
-    "description": "Services Informatiques aux Organisations, specializing in software development and business applications.",
+    "description": "Higher National Diploma in IT Services for Organizations, specializing in software development and business applications.",
     "achievements": [
       "Application development (Software Solutions & Business Applications)",
       "Software development methodologies and IT project management",
@@ -13,7 +13,7 @@
   },
   {
     "position": "L1 Computer Science",
-    "company": "Université de Toulouse",
+    "company": "University of Toulouse",
     "period": "2024 - 2025",
     "description": "First year of Computer Science degree focusing on programming fundamentals and system architecture.",
     "achievements": [
@@ -25,7 +25,7 @@
   },
   {
     "position": "Observation Internship",
-    "company": "Médiathèque de Port-la-Nouvelle",
+    "company": "Port-la-Nouvelle Media Library",
     "period": "2020 - 2021",
     "description": "Discovery internship in a public library environment, focusing on digital document management.",
     "achievements": [
