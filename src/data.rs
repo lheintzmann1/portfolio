@@ -1,34 +1,30 @@
-//! # Data Module
-//!
-//! Handles loading and parsing of JSON data files embedded at compile time.
-//! All content data (profile, skills, experience, etc.) is loaded from
-//! the `assets/data/` directory.
+// Data loading and parsing module.
+// All content is loaded from RON files in assets/data/ at compile time.
 
 use serde::Deserialize;
 
-// ============================================================================
-// JSON FILE PATHS (embedded at compile time)
-// ============================================================================
+// RON file contents embedded at compile time
+const PROFILE_RON: &str = include_str!("../assets/data/profile.ron");
+const CONTACT_RON: &str = include_str!("../assets/data/contact.ron");
+const SKILLS_RON: &str = include_str!("../assets/data/skills.ron");
+const EXPERIENCE_RON: &str = include_str!("../assets/data/experience.ron");
+const NAVIGATION_RON: &str = include_str!("../assets/data/navigation.ron");
+const PROJECTS_RON: &str = include_str!("../assets/data/projects.ron");
+const LANGUAGE_COLORS_RON: &str = include_str!("../assets/data/language_colors.ron");
 
-const PROFILE_JSON: &str = include_str!("../assets/data/profile.json");
-const CONTACT_JSON: &str = include_str!("../assets/data/contact.json");
-const SKILLS_JSON: &str = include_str!("../assets/data/skills.json");
-const EXPERIENCE_JSON: &str = include_str!("../assets/data/experience.json");
-const NAVIGATION_JSON: &str = include_str!("../assets/data/navigation.json");
-const PROJECTS_JSON: &str = include_str!("../assets/data/projects.json");
+// Helper function to parse RON and provide better error messages
+fn parse_ron<T: for<'de> Deserialize<'de>>(content: &str, filename: &str) -> T {
+    ron::from_str(content).unwrap_or_else(|e| panic!("Failed to parse {}: {}", filename, e))
+}
 
-// ============================================================================
-// PROFILE DATA
-// ============================================================================
+// Profile data structures
 
-/// Statistic item (e.g., "3+" years of experience).
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct Stat {
     pub value: String,
     pub label: String,
 }
 
-/// Profile/personal information.
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct ProfileData {
     pub name: String,
@@ -41,16 +37,12 @@ pub struct ProfileData {
     pub copyright_year: u16,
 }
 
-/// Loads profile data from embedded JSON.
 pub fn load_profile() -> ProfileData {
-    serde_json::from_str(PROFILE_JSON).expect("Failed to parse profile.json")
+    parse_ron(PROFILE_RON, "profile.ron")
 }
 
-// ============================================================================
-// CONTACT DATA
-// ============================================================================
+// Contact data structures
 
-/// Contact information entry (email, phone, location).
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct ContactInfo {
     pub label: String,
@@ -58,14 +50,12 @@ pub struct ContactInfo {
     pub href: String,
 }
 
-/// Social media link.
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct SocialLink {
     pub name: String,
     pub url: String,
 }
 
-/// Contact section data.
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct ContactData {
     pub intro: String,
@@ -74,32 +64,24 @@ pub struct ContactData {
     pub social_links: Vec<SocialLink>,
 }
 
-/// Loads contact data from embedded JSON.
 pub fn load_contact() -> ContactData {
-    serde_json::from_str(CONTACT_JSON).expect("Failed to parse contact.json")
+    parse_ron(CONTACT_RON, "contact.ron")
 }
 
-// ============================================================================
-// SKILLS DATA
-// ============================================================================
+// Skills data structures
 
-/// Skill category with list of skills.
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct SkillCategory {
     pub title: String,
     pub skills: Vec<String>,
 }
 
-/// Loads skills data from embedded JSON.
 pub fn load_skills() -> Vec<SkillCategory> {
-    serde_json::from_str(SKILLS_JSON).expect("Failed to parse skills.json")
+    parse_ron(SKILLS_RON, "skills.ron")
 }
 
-// ============================================================================
-// EXPERIENCE DATA
-// ============================================================================
+// Experience data structures
 
-/// Experience/education timeline entry.
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct ExperienceEntry {
     pub position: String,
@@ -110,32 +92,24 @@ pub struct ExperienceEntry {
     pub align: String,
 }
 
-/// Loads experience data from embedded JSON.
 pub fn load_experience() -> Vec<ExperienceEntry> {
-    serde_json::from_str(EXPERIENCE_JSON).expect("Failed to parse experience.json")
+    parse_ron(EXPERIENCE_RON, "experience.ron")
 }
 
-// ============================================================================
-// NAVIGATION DATA
-// ============================================================================
+// Navigation data structures
 
-/// Navigation link item.
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct NavLink {
     pub href: String,
     pub text: String,
 }
 
-/// Loads navigation links from embedded JSON.
 pub fn load_navigation() -> Vec<NavLink> {
-    serde_json::from_str(NAVIGATION_JSON).expect("Failed to parse navigation.json")
+    parse_ron(NAVIGATION_RON, "navigation.ron")
 }
 
-// ============================================================================
-// PROJECTS DATA
-// ============================================================================
+// Projects data structures
 
-/// Action button for a project card.
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct ProjectButton {
     pub label: String,
@@ -143,7 +117,6 @@ pub struct ProjectButton {
     pub primary: bool,
 }
 
-/// Project data structure.
 #[derive(Clone, PartialEq, Deserialize)]
 pub struct ProjectData {
     pub title: String,
@@ -152,7 +125,18 @@ pub struct ProjectData {
     pub buttons: Vec<ProjectButton>,
 }
 
-/// Loads project data from embedded JSON.
 pub fn load_projects() -> Vec<ProjectData> {
-    serde_json::from_str(PROJECTS_JSON).expect("Failed to parse projects.json")
+    parse_ron(PROJECTS_RON, "projects.ron")
+}
+
+// Language colors data structures
+
+#[derive(Clone, PartialEq, Deserialize)]
+pub struct LanguageColor {
+    pub bg_class: String,
+    pub text_class: String,
+}
+
+pub fn load_language_colors() -> std::collections::HashMap<String, LanguageColor> {
+    parse_ron(LANGUAGE_COLORS_RON, "language_colors.ron")
 }

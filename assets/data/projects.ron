@@ -1,0 +1,54 @@
+[
+    (
+        title: "Dioxus Leaflet",
+        description: "A general-purpose Leaflet map component for Dioxus applications. Provides interactive maps with markers, popups, and custom styling.",
+        tags: ["Rust", "TypeScript", "Dioxus"],
+        buttons: [
+            (label: "Source Code", url: "https://github.com/lheintzmann1/dioxus-leaflet", primary: false),
+            (label: "Crates.io", url: "https://crates.io/crates/dioxus-leaflet", primary: true),
+        ],
+    ),
+    (
+        title: "KPM - Kotlin Package Manager",
+        description: "A fast, declarative, and extensible package manager for Kotlin. Automates dependency resolution, config parsing, and version conflict detection.",
+        tags: ["Kotlin", "Package Manager", "CLI"],
+        buttons: [
+            (label: "Source Code", url: "https://github.com/lheintzmann1/kpm", primary: false),
+        ],
+    ),
+    (
+        title: "LBC-RS",
+        description: "Unofficial asynchronous Rust client for the Leboncoin API. Optimized HTTP requests for minimal latency when searching listings.",
+        tags: ["Rust", "Async", "HTTP Client", "API"],
+        buttons: [
+            (label: "Source Code", url: "https://github.com/lheintzmann1/lbc-rs", primary: false),
+            (label: "Crates.io", url: "https://crates.io/crates/lbc-rs", primary: true),
+        ],
+    ),
+    (
+        title: "GitHub Licenses Stats",
+        description: "Display your most used licenses as an SVG on your profile README. Generates dynamic badges for GitHub profiles.",
+        tags: ["JavaScript", "GitHub API", "SVG"],
+        buttons: [
+            (label: "Source Code", url: "https://github.com/lheintzmann1/github-licenses-stats", primary: false),
+            (label: "Preview", url: "https://github.com/lheintzmann1/github-licenses-stats/blob/main/Themes.md", primary: true),
+        ],
+    ),
+    (
+        title: "CSFloat-RS",
+        description: "An unofficial asynchronous Rust client for the CSFloat API. Query and interact with CS2 skin marketplace data.",
+        tags: ["Rust", "Async", "API Client"],
+        buttons: [
+            (label: "Source Code", url: "https://github.com/lheintzmann1/csfloat-rs", primary: false),
+            (label: "Crates.io", url: "https://crates.io/crates/csfloat-rs", primary: true),
+        ],
+    ),
+    (
+        title: "GOG Games Client",
+        description: "An unofficial client for searching and downloading GOG games through unofficial sources.",
+        tags: ["Rust", "CLI", "HTTP"],
+        buttons: [
+            (label: "Source Code", url: "https://github.com/lheintzmann1/gog-games-unofficial-client", primary: false),
+        ],
+    ),
+]

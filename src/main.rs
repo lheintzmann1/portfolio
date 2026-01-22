@@ -1,16 +1,5 @@
-//! # Portfolio Application
-//!
-//! A modern, responsive portfolio website built with Dioxus and Tailwind CSS.
-//! This application showcases projects, skills, and professional experience
-//! through an elegant single-page design.
-//!
-//! ## Architecture
-//!
-//! - `main.rs`: Application entry point and root component
-//! - `components/`: Reusable UI components (Hero, Navbar, Skills, etc.)
-//! - `assets.rs`: Static asset declarations (images, stylesheets, media)
-//! - `styles.rs`: Shared CSS class constants for visual consistency
-//! - `data.rs`: JSON data loading and parsing
+// Portfolio application built with Dioxus and Tailwind CSS.
+// A modern, responsive single-page site showcasing projects, skills, and experience.
 
 use dioxus::prelude::*;
 
@@ -22,23 +11,14 @@ mod styles;
 use assets::*;
 use components::*;
 
-/// Application entry point.
-///
-/// Initializes and launches the Dioxus application with the root `App` component.
 fn main() {
     dioxus::launch(App);
 }
 
-/// Root application component.
-///
-/// Defines the overall page structure including:
-/// - Document head configuration (favicon, stylesheets)
-/// - Custom cursor styling
-/// - Main content layout with all section components
 #[component]
 fn App() -> Element {
     rsx! {
-        // Document head configuration
+        // Document head: favicons, stylesheets, and metadata
         document::Title { "Lucas HEINTZMANN" }
         document::Link { rel: "icon", r#type: "image/x-icon", href: FAVICON_ICO }
         document::Link {
@@ -62,7 +42,7 @@ fn App() -> Element {
         document::Link { rel: "stylesheet", href: MAIN_CSS }
         document::Link { rel: "stylesheet", href: TW_CSS }
 
-        // Global custom cursor style
+        // Custom cursor style
         document::Style {
             r#"
             * {{
@@ -72,10 +52,8 @@ fn App() -> Element {
         }
 
         div { class: "bg-[#030014] relative",
-            // Add starfield before all content
             Starfield {}
 
-            // Wrap content in relative container
             div { class: "relative z-10",
                 Navbar {}
                 Hero {}
