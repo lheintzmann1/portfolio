@@ -28,7 +28,7 @@ jobs:
 
       - name: Setup Dioxus CLI
         run: |
-          cargo install dioxus-cli
+          cargo install dioxus-cli --version 0.7.8 --locked
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
