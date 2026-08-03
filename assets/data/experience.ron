@@ -1,5 +1,18 @@
 [
     (
+        position: "First Year Internship",
+        company: "Adaris Avocats, Oberhausbergen",
+        period: "18 May - 19 June 2026",
+        description: "Internship for the first year of the HND IT Services for Organizations, focusing on software development and business applications.",
+        achievements: [
+            "Contribution to an open-source web application for law firms, enhancing its features and fixing bugs",
+            "Database management and optimization for the application",
+            "E-invoicing integration for legal compliance and efficiency",
+            "Collaboration with the legal team to understand their needs and improve the application",
+        ],
+        align: "left",
+    ),
+    (
         position: "HND IT Services",
         company: "Jean Lurçat High School, Perpignan",
         period: "2025 - 2027",
