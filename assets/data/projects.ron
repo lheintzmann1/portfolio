@@ -9,11 +9,12 @@
         ],
     ),
     (
-        title: "KPM - Kotlin Package Manager",
-        description: "A fast, declarative, and extensible package manager for Kotlin. Automates dependency resolution, config parsing, and version conflict detection.",
-        tags: ["Kotlin", "Package Manager", "CLI"],
+        title: "OSRS ETFs",
+        description: "Proof-of-concept of ETFs inside Old School RuneScape based on the in-game Grand Exchange.",
+        tags: ["Python", "Data Analysis", "Finance"],
         buttons: [
-            (label: "Source Code", url: "https://github.com/lheintzmann1/kpm", primary: false),
+            (label: "Source Code", url: "https://github.com/lheintzmann1/osrs-assets", primary: false),
+            (label: "Preview", url: "https://lheintzmann1.github.io/osrs-assets/", primary: true),
         ],
     ),
     (
