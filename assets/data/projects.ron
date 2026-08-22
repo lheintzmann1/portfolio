@@ -1,5 +1,11 @@
 [
     (
+        title: "Apogee Engine",
+        description: "A custom 3D game engine in C++ and C#: engine core, editor tooling and a homemade build system. Closed source, work in progress.",
+        tags: ["C++", "C#", "Game Engine", "Graphics"],
+        buttons: [],
+    ),
+    (
         title: "Dioxus Leaflet",
         description: "A general-purpose Leaflet map component for Dioxus applications. Provides interactive maps with markers, popups, and custom styling.",
         tags: ["Rust", "TypeScript", "Dioxus"],
@@ -10,11 +16,27 @@
     ),
     (
         title: "OSRS ETFs",
-        description: "Proof-of-concept of ETFs inside Old School RuneScape based on the in-game Grand Exchange.",
+        description: "Index construction over the Old School RuneScape Grand Exchange: published equal-weighted indices over item baskets, plus a measured feasibility study of why the fund on top of them should not be built.",
         tags: ["Python", "Data Analysis", "Finance"],
         buttons: [
             (label: "Source Code", url: "https://github.com/lheintzmann1/osrs-assets", primary: false),
             (label: "Preview", url: "https://lheintzmann1.github.io/osrs-assets/", primary: true),
+        ],
+    ),
+    (
+        title: "FeedRadar",
+        description: "A TweetDeck-style desktop RSS reader that syncs through a git repository you own — no account, no server. Conflict-free by construction via derived ids and per-device state shards.",
+        tags: ["Rust", "SQLite", "Desktop"],
+        buttons: [
+            (label: "Source Code", url: "https://github.com/lheintzmann1/FeedRadar", primary: true),
+        ],
+    ),
+    (
+        title: "KPM",
+        description: "A fast, declarative package manager for Kotlin, inspired by NPM, Yarn and Nix. Resolves Maven dependencies from a manifest and generates a lockfile for reproducible builds.",
+        tags: ["Kotlin", "JVM", "Build Tool", "Archived"],
+        buttons: [
+            (label: "Source Code", url: "https://github.com/lheintzmann1/kpm", primary: true),
         ],
     ),
     (
@@ -45,11 +67,12 @@
         ],
     ),
     (
-        title: "GOG Games Client",
-        description: "An unofficial client for searching and downloading GOG games through unofficial sources.",
-        tags: ["Rust", "CLI", "HTTP"],
+        title: "Nav2JSON",
+        description: "A Rust library and CLI parsing Valve .nav navigation mesh files into JSON. Zero-copy parsing of Source engine formats (versions 30-35), rewritten from a C# implementation.",
+        tags: ["Rust", "Binary Parsing", "CLI"],
         buttons: [
-            (label: "Source Code", url: "https://github.com/lheintzmann1/gog-games-unofficial-client", primary: false),
+            (label: "Source Code", url: "https://github.com/lheintzmann1/nav2json-rs", primary: false),
+            (label: "Crates.io", url: "https://crates.io/crates/nav2json-rs", primary: true),
         ],
     ),
 ]
