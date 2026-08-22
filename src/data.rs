@@ -87,9 +87,18 @@ pub struct ExperienceEntry {
     pub position: String,
     pub company: String,
     pub period: String,
+    /// "point" for a one-off event, "range" for a span of time.
+    pub marker: String,
+    /// Badge label for anything not finished yet ("In progress", "Seeking").
+    /// `None` means the entry is over and done with.
+    pub status: Option<String>,
     pub description: String,
     pub achievements: Vec<String>,
     pub align: String,
+    /// Entries that fall inside this one's period. A range marker is drawn
+    /// around the whole group, so a diploma visibly spans the internships
+    /// taken during it instead of stopping at its own card.
+    pub nested: Vec<ExperienceEntry>,
 }
 
 pub fn load_experience() -> Vec<ExperienceEntry> {
