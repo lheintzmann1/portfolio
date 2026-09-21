@@ -39,9 +39,18 @@ public sealed record ExperienceEntry(
     string Position,
     string Company,
     string Period,
+    /// "point" for a one-off event, "range" for a span of time.
+    string Marker,
+    /// Badge label for anything not finished yet ("In progress", "Seeking").
+    /// null means the entry is over and done with.
+    string? Status,
     string Description,
     IReadOnlyList<string> Achievements,
-    string Align);
+    string Align,
+    /// Entries that fall inside this one's period. A range marker is drawn
+    /// around the whole group, so a diploma visibly spans the internships
+    /// taken during it instead of stopping at its own card.
+    IReadOnlyList<ExperienceEntry> Nested);
 
 // Navigation
 
