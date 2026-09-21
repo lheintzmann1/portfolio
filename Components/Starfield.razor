@@ -1,0 +1,38 @@
+@* Canvas starfield with twinkling stars and shooting stars, covering the viewport
+   behind all page content. The animation itself lives in wwwroot/js/site.js.
+
+   The canvas is viewport-fixed at exactly 100vh: it does not scroll with the page. *@
+
+@inject IJSRuntime JS
+
+<canvas id="starfield-canvas"
+        class="fixed top-0 left-0 w-full pointer-events-none"
+        style="z-index: 1; height: 100vh;"></canvas>
+
+@code {
+    /// Number of static stars
+    [Parameter] public int StarCount { get; set; } = 360;
+
+    /// Number of shooting stars
+    [Parameter] public int ShootingStarCount { get; set; } = 3;
+
+    /// Star opacity (0.0 - 1.0)
+    [Parameter] public double StarOpacity { get; set; } = 0.6;
+
+    /// Shooting star speed multiplier
+    [Parameter] public double SpeedMultiplier { get; set; } = 1.0;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("site.initStarfield", "starfield-canvas", new
+            {
+                starCount = StarCount,
+                shootingStarCount = ShootingStarCount,
+                starOpacity = StarOpacity,
+                speedMultiplier = SpeedMultiplier,
+            });
+        }
+    }
+}

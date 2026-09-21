@@ -1,0 +1,55 @@
+@* Featured work loaded from Data/projects.json.
+   Each project is a card with title, description, tags, and action buttons. *@
+
+<section id="projects"
+         class="min-h-screen w-full py-20 px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-32">
+    <div class="max-w-7xl mx-auto">
+        <SectionTitle Title="Featured Projects" />
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach (var project in SiteData.Projects)
+            {
+                <div class="@Styles.GlassCardLiftStrong">
+                    <h3 class="text-2xl font-light text-white mb-4 tracking-tight">@project.Title</h3>
+
+                    <p class="text-gray-400 mb-6 flex-grow leading-relaxed font-light text-[15px]">
+                        @project.Description
+                    </p>
+
+                    @* Tag list *@
+                    <div class="flex flex-wrap gap-2.5 mb-6">
+                        @foreach (var tag in project.Tags)
+                        {
+                            var color = TagColor(tag);
+                            <span class="px-4 py-1.5 text-xs font-light rounded-full @color.BgClass @color.TextClass border backdrop-blur-sm tracking-wide transition-all duration-300 ease-in-out cursor-default">
+                                @tag
+                            </span>
+                        }
+                    </div>
+
+                    @if (project.Buttons.Count > 0)
+                    {
+                        <div class="flex gap-3 mt-auto">
+                            @foreach (var button in project.Buttons)
+                            {
+                                <a href="@button.Url" target="_blank" rel="noopener noreferrer"
+                                   class="@(button.Primary ? Styles.BtnPrimary : Styles.BtnSecondary)">
+                                    @button.Label
+                                </a>
+                            }
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@code {
+    private static readonly LanguageColor Fallback = new(
+        "bg-white/[0.06] hover:bg-white/[0.10] border-white/[0.08] hover:border-white/[0.12]",
+        "text-gray-300");
+
+    private static LanguageColor TagColor(string name) =>
+        SiteData.LanguageColors.TryGetValue(name, out var color) ? color : Fallback;
+}

@@ -1,0 +1,11 @@
+@* Single-page site: every route renders Index, matching the anchor-only navigation
+   of the original. The GitHub Pages 404.html fallback lands here too. *@
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" />
+    </Found>
+    <NotFound>
+        <Portfolio.Pages.Index />
+    </NotFound>
+</Router>

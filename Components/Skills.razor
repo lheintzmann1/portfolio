@@ -1,0 +1,31 @@
+@* Technical skills organized by category in a responsive grid.
+   Each category is a glassmorphism card with hover effects. *@
+
+<section id="skills"
+         class="min-h-screen w-full py-20 px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-32">
+    <div class="max-w-7xl mx-auto">
+        @* Section header *@
+        <SectionTitle Title="Skills &amp; Technologies" />
+
+        @* Skills grid *@
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach (var category in SiteData.Skills)
+            {
+                <div class="@Styles.GlassCardLift">
+                    <h3 class="text-2xl font-light text-white mb-6 tracking-tight">@category.Title</h3>
+
+                    <div class="space-y-3">
+                        @foreach (var skill in category.Skills)
+                        {
+                            <div class="flex items-center space-x-4 transition-all duration-300 hover:translate-x-1">
+                                @* Decorative gradient bullet *@
+                                <div class="w-1.5 h-1.5 rounded-full bg-[linear-gradient(135deg,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0.1)_100%)]"></div>
+                                <span class="text-gray-400 hover:text-white font-light text-[15px]">@skill</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

@@ -1,2 +1,6 @@
-@source "./src/**/*.{rs,html,css}";
+@source "./Components/**/*.razor";
+@source "./Pages/**/*.razor";
+@source "./Styles.cs";
+@source "./Data/*.json";
+@source "./wwwroot/index.html";
 @import "tailwindcss";

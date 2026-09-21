@@ -1,0 +1,48 @@
+@* Fixed navigation header with logo, site name, and section links.
+   Glassmorphism styling with a backdrop blur.
+
+   Layout:
+   - Left: Logo and site name (name hidden on mobile)
+   - Center: Navigation links to page sections
+   - Right: Spacer (reserved for future features) *@
+
+<nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/20 border-b border-white/10">
+    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center h-16">
+            @* Logo and brand name (left) *@
+            <div class="flex-1 flex items-center space-x-3">
+                <div class="w-10 h-10">
+                    <img class="w-full h-full hover:brightness-110 transition-all duration-300"
+                         src="assets/lh-white.svg" alt="@(_profile.Name) Logo" />
+                </div>
+
+                @* Owner name (hidden on mobile) *@
+                <a href="#"
+                   class="hidden md:flex ml-2.5 text-white hover:text-blue-400 transition-colors duration-300"
+                   style="@Styles.FontOutfit font-weight: 400;">
+                    @_profile.Name
+                </a>
+            </div>
+
+            @* Navigation links (center) *@
+            <nav class="flex-1 flex justify-center items-baseline space-x-8">
+                @foreach (var link in SiteData.Navigation)
+                {
+                    <a href="@link.Href"
+                       class="text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group">
+                        @link.Text
+                        @* Animated underline on hover *@
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                }
+            </nav>
+
+            @* Right spacer (reserved for social icons or language toggle) *@
+            <div class="flex-1"></div>
+        </div>
+    </div>
+</nav>
+
+@code {
+    private readonly ProfileData _profile = SiteData.Profile;
+}

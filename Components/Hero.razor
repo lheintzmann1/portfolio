@@ -1,0 +1,36 @@
+@* Landing section: fullscreen black hole video with the introduction overlaid.
+
+   The transform below is hand-tuned so the event horizon lands exactly on the
+   bottom edge of the fixed navbar. It is height-relative (object-cover on a
+   min-h-screen box), so do not change the container, the object-fit or the 43%. *@
+
+@inject IJSRuntime JS
+
+<main class="relative min-h-screen w-full overflow-hidden">
+    @* Video background layer (z-index: auto) *@
+    <video @ref="_video"
+           class="absolute inset-0 w-full h-full object-cover"
+           style="transform: rotate(180deg) translateY(43%);"
+           autoplay muted loop playsinline preload="auto">
+        <source src="assets/blackhole.webm" type="video/webm" />
+    </video>
+
+    @* Content layer positioned above video *@
+    <div class="relative z-20 min-h-screen flex items-center justify-center">
+        <HeroContent />
+    </div>
+</main>
+
+@code {
+    private ElementReference _video;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Chrome's autoplay policy reads the muted DOM property, which Blazor
+            // does not set by rendering the attribute. Without this the video stalls.
+            await JS.InvokeVoidAsync("site.primeVideo", _video);
+        }
+    }
+}

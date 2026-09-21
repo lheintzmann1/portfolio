@@ -1,0 +1,70 @@
+@* Professional experience and education as an interactive timeline.
+   Alternating left/right alignment on desktop with animated dots. *@
+
+<section id="experience"
+         class="min-h-screen w-full py-20 px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-32">
+    <div class="max-w-5xl mx-auto">
+        @* Section header *@
+        <SectionTitle Title="Experience" />
+
+        @* Timeline container *@
+        <div class="space-y-12 relative">
+            @* Vertical timeline line *@
+            <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-px h-full bg-white/20"></div>
+
+            @* Timeline entries *@
+            @foreach (var entry in SiteData.Experience)
+            {
+                var alignRight = entry.Align == "right";
+
+                <div class="relative pl-8 md:pl-0 md:w-1/2 @(alignRight ? "md:ml-auto md:pl-12" : "md:mr-auto md:pr-12")">
+                    @* Timeline dot indicator *@
+                    <div class="@(alignRight ? DotRight : DotLeft)"></div>
+
+                    @* Content card *@
+                    <div class="@Styles.GlassCardLift">
+                        @* Header with position and period *@
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                            <h3 class="text-xl font-light text-white tracking-tight">@entry.Position</h3>
+                            <span class="text-gray-500 text-xs mt-1 md:mt-0 tracking-wider uppercase">
+                                @entry.Period
+                            </span>
+                        </div>
+
+                        @* Company/institution name *@
+                        <h4 class="text-lg text-gray-400 mb-4 font-light">@entry.Company</h4>
+
+                        @* Description *@
+                        <p class="text-gray-400 mb-5 leading-relaxed font-light text-[15px]">
+                            @entry.Description
+                        </p>
+
+                        @* Achievement bullets *@
+                        <div class="space-y-3">
+                            @foreach (var achievement in entry.Achievements)
+                            {
+                                <div class="flex items-start space-x-3 transition-all duration-300 hover:translate-x-1">
+                                    @* Gradient bullet *@
+                                    <div class="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-blue-400/50 to-blue-400/20 mt-2 shrink-0"></div>
+                                    <span class="text-gray-500 text-sm font-light hover:text-white">@achievement</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@code {
+    private const string DotRight =
+        "absolute left-0 md:left-0 top-0 w-3 h-3 rounded-full " +
+        "bg-gradient-to-br from-blue-400 to-blue-500 border-4 border-[#080808] " +
+        "shadow-lg shadow-blue-400/30 transform md:-translate-x-1/2";
+
+    private const string DotLeft =
+        "absolute left-0 md:right-0 md:left-auto top-0 w-3 h-3 rounded-full " +
+        "bg-gradient-to-br from-blue-400 to-blue-500 border-4 border-[#080808] " +
+        "shadow-lg shadow-blue-400/30 transform md:translate-x-1/2";
+}

@@ -1,0 +1,18 @@
+@page "/"
+
+@* The whole site. Z-order is load-bearing: starfield z-index:1, content z-10,
+   hero overlay z-20, navbar z-50, hero video z-auto (below the overlay). *@
+
+<div class="bg-[#030014] relative">
+    <Starfield />
+
+    <div class="relative z-10">
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+    </div>
+</div>

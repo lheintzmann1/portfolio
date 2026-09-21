@@ -1,0 +1,15 @@
+<Project>
+
+  <PropertyGroup>
+    <!--
+      This project is a plain Blazor WebAssembly app with no AOT compilation, so it needs
+      no optional workloads (wasm-tools, MAUI, ...). Skipping the workload resolver keeps
+      the build working on SDK installs whose workload manifests are out of sync with the
+      pinned workload set - a common situation with distro-packaged .NET.
+
+      Safe to remove once `dotnet workload repair` has been run, if you prefer.
+    -->
+    <MSBuildEnableWorkloadResolver>false</MSBuildEnableWorkloadResolver>
+  </PropertyGroup>
+
+</Project>

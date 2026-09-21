@@ -1,0 +1,10 @@
+@* Section heading with underline accent, shared by About, Skills, Projects and Experience. *@
+
+<div class="text-center mb-16">
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" style="@Styles.FontInter">@Title</h2>
+    <div class="h-0.5 w-20 bg-blue-400 mx-auto"></div>
+</div>
+
+@code {
+    [Parameter, EditorRequired] public required string Title { get; set; }
+}
